@@ -29,12 +29,13 @@ export const getServerSideProps = async () => {
   const mockData = JSON.parse(data.toString()) as MockData[]
   return {
     props: {
+      rand: Math.random(),
       mockData
     }
   };
 };
 
-export default function Home({ mockData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ rand, mockData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Head>
@@ -44,8 +45,19 @@ export default function Home({ mockData }: InferGetServerSidePropsType<typeof ge
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <div>
+          {rand}
+        </div>
         {mockData.map((md, i) => <div key={i}>
-          <h1>{md.description}</h1>
+          <h1>{md.dob}</h1>
+          <h2>{md.salary}</h2>
+          <p>{md.description}</p>
+          <ul>
+            <li>{md.address.street}</li>
+            <li>{md.address.town}</li>
+            <li>{md.address.postode}</li>
+          </ul>
+          <button>{md.verified ? "Yes" : "No"}</button>
         </div>)}
       </main>
     </>
