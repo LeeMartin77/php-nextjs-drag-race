@@ -1,0 +1,37 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 25 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 25 looping VUs for 30s (gracefulStop: 30s)
+
+     ✓ status is 200
+
+     checks.........................: 100.00% ✓ 2311      ✗ 0   
+     data_received..................: 946 MB  31 MB/s
+     data_sent......................: 185 kB  6.1 kB/s
+     http_req_blocked...............: avg=16.95µs  min=0s      med=2µs      max=1.53ms   p(90)=4µs      p(95)=5µs     
+     http_req_connecting............: avg=8.88µs   min=0s      med=0s       max=954µs    p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=325.74ms min=60.93ms med=314.48ms max=4.53s    p(90)=365.87ms p(95)=389.32ms
+       { expected_response:true }...: avg=325.74ms min=60.93ms med=314.48ms max=4.53s    p(90)=365.87ms p(95)=389.32ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 2311
+     http_req_receiving.............: avg=211.75ms min=19.81ms med=232.91ms max=697.88ms p(90)=298.83ms p(95)=314.56ms
+     http_req_sending...............: avg=31.9µs   min=2µs     med=10µs     max=14.86ms  p(90)=18µs     p(95)=21µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=113.95ms min=5.62ms  med=58.78ms  max=4.37s    p(90)=203.84ms p(95)=233.77ms
+     http_reqs......................: 2311    76.530173/s
+     iteration_duration.............: avg=325.52ms min=60.98ms med=314.29ms max=4.52s    p(90)=365.35ms p(95)=389.09ms
+     iterations.....................: 2311    76.530173/s
+     vus............................: 25      min=25      max=25
+     vus_max........................: 25      min=25      max=25
+
+
+running (0m30.2s), 00/25 VUs, 2311 complete and 0 interrupted iterations
+default ✓ [ 100% ] 25 VUs  30s

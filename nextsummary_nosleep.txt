@@ -1,0 +1,37 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 25 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 25 looping VUs for 30s (gracefulStop: 30s)
+
+     ✓ status is 200
+
+     checks.........................: 100.00% ✓ 471       ✗ 0   
+     data_received..................: 338 MB  11 MB/s
+     data_sent......................: 38 kB   1.2 kB/s
+     http_req_blocked...............: avg=64.03µs  min=1µs      med=4µs    max=1.37ms  p(90)=5µs    p(95)=750.49µs
+     http_req_connecting............: avg=40.91µs  min=0s       med=0s     max=874µs   p(90)=0s     p(95)=550.49µs
+     http_req_duration..............: avg=1.62s    min=767.05ms med=1.63s  max=3.24s   p(90)=1.71s  p(95)=1.72s   
+       { expected_response:true }...: avg=1.62s    min=767.05ms med=1.63s  max=3.24s   p(90)=1.71s  p(95)=1.72s   
+     http_req_failed................: 0.00%   ✓ 0         ✗ 471 
+     http_req_receiving.............: avg=5.25ms   min=2.45ms   med=5.13ms max=12.25ms p(90)=5.72ms p(95)=6.32ms  
+     http_req_sending...............: avg=103.56µs min=5µs      med=20µs   max=13.13ms p(90)=23µs   p(95)=33.49µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s     max=0s      p(90)=0s     p(95)=0s      
+     http_req_waiting...............: avg=1.62s    min=761.98ms med=1.63s  max=3.23s   p(90)=1.7s   p(95)=1.71s   
+     http_reqs......................: 471     15.142622/s
+     iteration_duration.............: avg=1.62s    min=768.61ms med=1.63s  max=3.24s   p(90)=1.71s  p(95)=1.72s   
+     iterations.....................: 471     15.142622/s
+     vus............................: 3       min=3       max=25
+     vus_max........................: 25      min=25      max=25
+
+
+running (0m31.1s), 00/25 VUs, 471 complete and 0 interrupted iterations
+default ✓ [ 100% ] 25 VUs  30s
