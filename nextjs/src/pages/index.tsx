@@ -25,7 +25,7 @@ type MockData = {
 }
 
 export const getServerSideProps = async () => {
-  const data = fs.readFileSync("./mockdata.json");
+  const data = fs.readFileSync("./mockdata_200.json");
   const mockData = JSON.parse(data.toString()) as MockData[]
   return {
     props: {

@@ -1,0 +1,37 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 25 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 25 looping VUs for 30s (gracefulStop: 30s)
+
+     ✓ status is 200
+
+     checks.........................: 100.00% ✓ 10567      ✗ 0    
+     data_received..................: 865 MB  29 MB/s
+     data_sent......................: 845 kB  28 kB/s
+     http_req_blocked...............: avg=5.95µs  min=0s     med=1µs     max=1.3ms p(90)=2µs     p(95)=2µs     
+     http_req_connecting............: avg=3.66µs  min=0s     med=0s      max=866µs p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=71ms    min=2.07ms med=65.14ms max=3.01s p(90)=92.68ms p(95)=103.83ms
+       { expected_response:true }...: avg=71ms    min=2.07ms med=65.14ms max=3.01s p(90)=92.68ms p(95)=103.83ms
+     http_req_failed................: 0.00%   ✓ 0          ✗ 10567
+     http_req_receiving.............: avg=45.85ms min=484µs  med=46.59ms max=1.21s p(90)=65.7ms  p(95)=74.91ms 
+     http_req_sending...............: avg=7.02µs  min=2µs    med=7µs     max=117µs p(90)=11µs    p(95)=12µs    
+     http_req_tls_handshaking.......: avg=0s      min=0s     med=0s      max=0s    p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=25.14ms min=852µs  med=14.11ms max=2.97s p(90)=42.51ms p(95)=56.12ms 
+     http_reqs......................: 10567   351.556049/s
+     iteration_duration.............: avg=71.04ms min=2.13ms med=65.18ms max=3.01s p(90)=92.74ms p(95)=103.87ms
+     iterations.....................: 10567   351.556049/s
+     vus............................: 25      min=25       max=25 
+     vus_max........................: 25      min=25       max=25 
+
+
+running (0m30.1s), 00/25 VUs, 10567 complete and 0 interrupted iterations
+default ✓ [ 100% ] 25 VUs  30s

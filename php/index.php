@@ -6,8 +6,8 @@
           <?php echo rand(0, 1000) ?>
         </div>
 <?php
-$myfile = fopen("mockdata.json", "r");
-$json = fread($myfile,filesize("mockdata.json"));
+$myfile = fopen("mockdata_200.json", "r");
+$json = fread($myfile,filesize("mockdata_200.json"));
 $data = json_decode($json);
 foreach ($data as $item) {
 ?>
