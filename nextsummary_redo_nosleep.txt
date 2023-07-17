@@ -1,0 +1,38 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 25 max VUs, 1m0s max duration (incl. graceful stop):
+           * default: 25 looping VUs for 30s (gracefulStop: 30s)
+
+
+     ✓ status is 200
+
+     checks.........................: 100.00% ✓ 2859      ✗ 0   
+     data_received..................: 413 MB  14 MB/s
+     data_sent......................: 229 kB  7.6 kB/s
+     http_req_blocked...............: avg=13.81µs  min=1µs      med=2µs      max=1.84ms   p(90)=4µs      p(95)=5µs     
+     http_req_connecting............: avg=6.35µs   min=0s       med=0s       max=857µs    p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=262.7ms  min=121.57ms med=259.39ms max=626.48ms p(90)=283.67ms p(95)=323.47ms
+       { expected_response:true }...: avg=262.7ms  min=121.57ms med=259.39ms max=626.48ms p(90)=283.67ms p(95)=323.47ms
+     http_req_failed................: 0.00%   ✓ 0         ✗ 2859
+     http_req_receiving.............: avg=1.05ms   min=70µs     med=975µs    max=6.76ms   p(90)=1.22ms   p(95)=1.65ms  
+     http_req_sending...............: avg=34.76µs  min=4µs      med=12µs     max=7.39ms   p(90)=20µs     p(95)=23µs    
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=261.61ms min=120.7ms  med=258.29ms max=625.08ms p(90)=282.4ms  p(95)=322.24ms
+     http_reqs......................: 2859    94.866989/s
+     iteration_duration.............: avg=262.82ms min=121.68ms med=259.49ms max=626.69ms p(90)=283.97ms p(95)=325.68ms
+     iterations.....................: 2859    94.866989/s
+     vus............................: 25      min=25      max=25
+     vus_max........................: 25      min=25      max=25
+
+
+running (0m30.1s), 00/25 VUs, 2859 complete and 0 interrupted iterations
+default ✓ [ 100% ] 25 VUs  30s
